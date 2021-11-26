@@ -1,0 +1,458 @@
+2) https://medium.com/@reach2arunprakash/guvi-zen-class-find-the-culprits-and-nail-them-9ee6c67c44fb
+
+Find the culprit
+
+fix.html
+
+<!DOCTYPE html>
+<html>
+<body>
+ <script>
+ alert( “I’m JavaScript!’);
+ </script>
+ Whats the error in this ?
+</body>
+</html>
+
+solution:
+
+Find the culprit
+
+fix.html
+
+<!DOCTYPE html>
+<html>
+<body>
+ <script>
+ alert("I’m JavaScript!");
+ </script>
+ Whats the error in this ?
+</body>
+</html>
+-----------------------------------------------------------------------------------------------
+2) fix.html
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+scripts.js
+alert(“I’m invoked!”);
+
+solution:
+fix.html
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”scripts.js”></script> // File name should be proper
+</body>
+</html>
+scripts.js
+alert(“I’m invoked!”);
+------------------------------------------------------------------------------------------------------
+3) explain.html
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+script.js (Explanation)
+
+alert("I'm JavaScript!"); // First this alert box pops up "I'm Javascript"
+alert('Hello') // Second alert box will "Hello"
+alert(`Wor
+ ld`)
+alert(3 +
+1
++ 2); // Third alert box will pop up with value '6'
+
+-----------------------------------------------------------------------------------------------------
+4) Fix the below to alert Guvi geek
+fix.html
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+script.js
+
+let admin=9, fname=10.5; 
+fname = "Guvi";
+lname = "geek"
+admin = fname+lname;
+alert( admin ); // "Guvi geek"
+
+solution: Fix the below to alert Guvi geek
+
+script.js
+let admin=9, fname=10.5; 
+fname = "Guvi";
+lname = "geek"
+admin = fname+" "+lname;
+alert( admin ); // "Guvi geek"
+---------------------------------------------------------------------------------------------------------------
+5) Fix the below to alert hello Guvi geek
+fix.html
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+script.js
+let fname=10.5; 
+fname = "Guvi";
+lname = "geek"
+let name = fname+lname;
+alert( 'hello ${name}' );
+
+solution:
+
+let fname = 10.5;
+fname = "Guvi";
+lname = "geek";
+let name = fname + lname;
+alert(`hello ${name}`); // use Tilt symbol
+-------------------------------------------------------------------------------------------------
+6) Fix the below to alert sum of two numbers
+
+fix.html
+
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+script.js
+
+let a = prompt("First number?");
+let b = prompt("Second number?");
+alert(a + b);
+
+solution:
+
+let a = prompt("First number?");
+let b = prompt("Second number?");
+alert(parseInt(a) + parseInt(b));
+-------------------------------------------------------------------------------------------
+7)If you run the below scritpt you will get “Code is Blasted”
+Explain Why the Code is blasted and how to diffuse it and get “Diffused”.
+fix.html
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+
+script.js
+
+var a = "2" > "12";
+//Don't touch below this
+if (a) {
+  console.log("Code is Blasted") 
+}
+else
+{
+  console.log("Diffused") 
+}
+
+solution:
+Code is blasted as it takes the ASCII value
+To print diffused:
+var a = "2" < "12";
+if (a) {
+  console.log("Code is Blasted") 
+}
+else
+{
+  console.log("Diffused") 
+}
+-----------------------------------------------------------------------------------------------
+8)How to get the success in console.
+fix.html
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+script.js
+let a = prompt("Enter a number?");
+//Don't modify any code below this
+if (a) {
+ console.log( 'OMG it works for any number inc 0' );
+}
+else
+{
+ console.log( "Success" );
+}
+
+
+solution:
+
+let b = prompt("Enter a number?");
+let a;
+//Don't modify any code below this
+if (a) {
+  console.log("OMG it works for any number inc 0");
+} else {
+  console.log("Success"); // output is "Success"
+}
+--------------------------------------------------------------------------------------
+9) How to get the correct score in console.
+fix.html
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+script.js
+let value = prompt('How many runs you scored in this ball');
+if (value === 4) {
+      console.log("You hit a Four");
+} else if (value === 6) {
+      console.log("You hit a Six");
+} else {
+      console.log("I couldn't figure out");
+}
+
+solution:
+
+let value = prompt("How many runs you scored in this ball");
+if (parseInt(value) === 4) {
+  console.log("You hit a Four");
+} else if (parseInt(value) === 6) {
+  console.log("You hit a Six");
+} else {
+  console.log("I couldn't figure out");
+}
+-----------------------------------------------------------------------------------------------------
+10) Fix the code to welcome the boss
+fix.html
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+script.js
+// You cant change the value of the msg
+let message;
+if (null || 2 || undefined )
+{
+ let message = "welcome boss";
+}
+else
+{
+ let message = "Go away";
+}
+  console.log(message);
+
+solution:
+
+let message;
+if (message == null || message == 2 || message == undefined) {
+  message = "welcome boss";
+} else {
+  message = "Go away";
+}
+console.log(message);
+-------------------------------------------------------------------------------------------------------------
+11)Fix the code to welcome the boss
+fix.html
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+script.js
+let message;
+let lock = 2;
+//Dont change any code below this 
+if (null || lock || undefined )
+{
+  message = "Go away";
+}
+else
+{
+ message = "welcome";
+}
+  console.log(message);
+
+solution:
+
+let message;
+let lock;
+if (null || lock || undefined) {
+  message = "Go away";
+} else {
+  message = "welcome";
+}
+console.log(message);
+
+------------------------------------------------------------------------------------------
+12)Fix the code to welcome the boss
+fix.html
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+script.js
+let message;
+let lock = 2;
+//Dont change any code below this
+if (lock && " " || undefined )
+{
+  message = "Go away";
+}
+else
+{
+ message = "welcome";
+}
+console.log(message);
+
+solution:
+
+
+let message;
+let lock;
+//Dont change any code below this
+if ((lock && " ") || undefined) {
+  message = "Go away";
+} else {
+  message = "welcome";
+}
+console.log(message);
+---------------------------------------------------------------------------------------------
+13) Change the code to print
+3
+2
+1
+fix.html
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+script.js
+//You can change only 2 characters
+let i = 3;
+while (i) {
+  console.log( --i );
+}
+
+solution:
+
+let i = 3;
+while (i) {
+  console.log(i--);
+}
+-------------------------------------------------------------------------------------------------------
+14)Change the code to print 1 to 10 in 4 lines
+fix.html
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+script.js
+let num = 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+
+solution:
+
+let num = 1;
+for (let i = 1; i <= 10; i++) {
+  console.log(i);
+}
+-----------------------------------------------------------------------------------------------
+15)Change the code to print even numbers
+fix.html
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+script.js
+//You are allowed to modify only one character 
+for (let num = 2; num <= 20; num += 1) {
+  console.log(num)
+}
+
+solution:
+
+for (let num = 2; num <= 20; num += 2) {
+  console.log(num);
+}
+
+--------------------------------------------------------------------------------------------
+16)Change the code to print all the gifts
+fix.html
+<!DOCTYPE html>
+<html>
+<body>
+ <script src=”script.js”></script>
+</body>
+</html>
+script.js
+let gifts = ["teddy bear", "drone", "doll"];
+for (let i = 0; i < 3; i++) {
+  console.log('Wrapped ${'gifts[i]'} and added a bow!');
+}
+
+
+solultion:
+
+let gifts = ["teddy bear", "drone", "doll"];
+for (let i = 0; i < 3; i++) {
+  console.log(`Wrapped ${gifts[i]} and added a bow!`);
+}
+-----------------------------------------------------------------------------------------------
+17)Whats the msg printed and why?
+var lemein = “0”;
+var lemeout = 0;
+var msg = “”;
+if (lemein) {
+ msg += “hi”;
+ }
+if (lemeout) {
+ msg += ‘Hello’;
+}
+console.log(msg);
+
+solution: Uncaught SyntaxError: Invalid or unexpected token
+----------------------------------------------------------------------------------------------------
+
